@@ -141,7 +141,12 @@ The README(s) should _at minimum_ include:
 * [RESTful API](https://restfulapi.net/22)
 
 
+[Link to frontend repo](https://github.com/MarkNewcomb1/reads-vue)
+
 [Link to backend api](https://galvanize-reads-mark.herokuapp.com/books)
+
 [Book by Id](https://galvanize-reads-mark.herokuapp.com/books/1)
+
 [Link to authors](https://galvanize-reads-mark.herokuapp.com/authors)
+
 [Author by Id](https://galvanize-reads-mark.herokuapp.com/authors/1)
