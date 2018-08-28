@@ -139,3 +139,9 @@ The README(s) should _at minimum_ include:
 * [Express Router](https://scotch.io/tutorials/learn-to-use-the-new-router-in-expressjs-4)
 
 * [RESTful API](https://restfulapi.net/22)
+
+
+[Link to backend api](https://galvanize-reads-mark.herokuapp.com/books)
+[Book by Id](https://galvanize-reads-mark.herokuapp.com/books/1)
+[Link to authors](https://galvanize-reads-mark.herokuapp.com/authors)
+[Author by Id](https://galvanize-reads-mark.herokuapp.com/authors/1)
