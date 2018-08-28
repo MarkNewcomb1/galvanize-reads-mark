@@ -20,7 +20,21 @@ module.exports = {
         });
     },
     listAuthors(){
-        return database('authors').select();
+        // return database('authors').select();
+        return database('authors')
+        .leftJoin('books as b1', 'authors.id', '=', 'b1.author1Id')
+        .leftJoin('books as b2', 'authors.id', '=', 'b2.author2Id')
+        .leftJoin('books as b3', 'authors.id', '=', 'b3.author3Id')
+        
+        .select({
+            firstName: 'authors.firstName',
+            lastName: 'authors.lastName',
+            biography: 'authors.biography',
+            portraitUrl: 'authors.portraitUrl',
+            books: 'b1.bookTitle',
+            moreBooks: 'b2.bookTitle',
+            evenMoreBooks: 'b3.bookTitle'
+        })
     },
     getBookById(id){
         return database('books').select().where('id', id).first();
