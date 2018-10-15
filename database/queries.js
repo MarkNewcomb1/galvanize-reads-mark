@@ -20,7 +20,7 @@ module.exports = {
     post(product, tableName) {
         return database(tableName)
             .insert(product)
-            .returning('*')
+            .returning("*")
             .then(record => record[0])
     },
     delete(id, tableName) {
