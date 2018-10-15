@@ -1,32 +1,17 @@
-const express = require("express");
-const bodyParser = require("body-parser");
+const express = require('express')
+const app = express()
+const cors = require('cors')
+const bodyParser = require('body-parser')
 
-const queries = require('./queries');
+const authors = require('./routes/authors')
+const books = require('./routes/books')
 
-const app = express();
-cors = require("cors");
-app.use(cors());
 
-const routes = require("./routes/the-routes.js");
+app.use(cors())
+app.use(bodyParser.json())
 
-app.use(bodyParser.json());
+app.use('/authors', authors)
+app.use('/books', books)
 
-app.use("/", routes);
-
-// catch 404 and forward to error handler
-app.use((req, res, next) => {
-    const err = new Error("Not Found");
-    err.status = 404;
-    next(err);
-});
-
-// error handler
-app.use((err, req, res, next) => {
-    res.status(err.status || 500);
-    res.json({
-        message: err.message,
-        error: req.app.get("env") === "development" ? err.stack : {}
-    });
-});
 
 module.exports = app;
